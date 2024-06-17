@@ -12,19 +12,16 @@
     - name: Setting up provider values
       set_fact:
        provider:
-        host: "{{ nios }}"
+        host: 10.255.197.92
         validate_certs: "False"
 
     - name: Configure an ipv4 host record
       infoblox.nios_modules.nios_host_record:
-        name: host.ansible.com
+        name: CAT3850
         ipv4:
-          - address: 192.168.10.1
+          - address: 10.255.197.85
         aliases:
-          - cname.ansible.com
+          - cat3850.ansible.com
         state: present
-        provider:
-          host: "{{ inventory_hostname_short }}"
-          username: admin
-          password: admin
+        provider: "{{ provider }}"
       connection: local
