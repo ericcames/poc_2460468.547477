@@ -1,0 +1,24 @@
+---
+- name: Information module for Device Interface By Ip
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Get Device Interface By Ip by id
+      cisco.dnac.device_interface_by_ip_info:
+        # dnac_host: "{{dnac_host}}"  PROVIDED BY CUSTOM CRED
+        # dnac_username: "{{dnac_username}}" PROVIDED BY CUSTOM CRED
+        # dnac_password: "{{dnac_password}}" PROVIDED BY CUSTOM CRED
+        # dnac_verify: "{{dnac_verify}}" PROVIDED BY CUSTOM CRED (True by default, setting to false for the POC)
+        # dnac_port: "{{dnac_port}}" Optional, tcp 443 by default
+        # dnac_version: "{{dnac_version}}" Optional, not needed
+        # dnac_debug: "{{dnac_debug}}" Used if you want to turn on debug
+        headers: "{{my_headers | from_json}}"
+        ipAddress: string
+      register: result
+
+    - name: Print output
+      ansible.builtin.debug:
+        var: result
+...
