@@ -1,0 +1,30 @@
+---
+- name: Infoblox config
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  collections:
+    - infoblox.nios_modules
+
+  tasks:
+
+    - name: Setting up provider values
+      set_fact:
+       provider:
+        host: "{{ nios }}"
+        validate_certs: "False"
+
+    - name: Configure an ipv4 host record
+      infoblox.nios_modules.nios_host_record:
+        name: host.ansible.com
+        ipv4:
+          - address: 192.168.10.1
+        aliases:
+          - cname.ansible.com
+        state: present
+        provider:
+          host: "{{ inventory_hostname_short }}"
+          username: admin
+          password: admin
+      connection: local
