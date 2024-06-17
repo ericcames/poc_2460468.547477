@@ -22,6 +22,6 @@
           - address: 10.255.197.85
         aliases:
           - cat3850.ansible.com
-        state: present
+        state: present # absent to remove
         provider: "{{ provider }}"
       connection: local
