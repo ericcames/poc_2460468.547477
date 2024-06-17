@@ -1,0 +1,49 @@
+---
+- name: CLI command playbook
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+    - name: Gather all legacy facts
+      cisco.ios.ios_facts:
+        gather_subset: all
+
+    # - name: Gather only the config and default facts
+    #   cisco.ios.ios_facts:
+    #     gather_subset:
+    #       - config
+
+    # - name: Do not gather hardware facts
+    #   cisco.ios.ios_facts:
+    #     gather_subset:
+    #       - "!hardware"
+
+    # - name: Gather legacy and resource facts
+    #   cisco.ios.ios_facts:
+    #     gather_subset: all
+    #     gather_network_resources: all
+
+    # - name: Gather only the interfaces resource facts and no legacy facts
+    #   cisco.ios.ios_facts:
+    #     gather_subset:
+    #       - "!all"
+    #       - "!min"
+    #     gather_network_resources:
+    #       - interfaces
+
+    # - name: Gather interfaces resource and minimal legacy facts
+    #   cisco.ios.ios_facts:
+    #     gather_subset: min
+    #     gather_network_resources: interfaces
+
+    # - name: Gather L2 interfaces resource and minimal legacy facts
+    #   cisco.ios.ios_facts:
+    #     gather_subset: min
+    #     gather_network_resources: l2_interfaces
+
+    # - name: Gather L3 interfaces resource and minimal legacy facts
+    #   cisco.ios.ios_facts:
+    #     gather_subset: min
+    #     gather_network_resources: l3_interfaces
