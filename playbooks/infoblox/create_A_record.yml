@@ -4,23 +4,48 @@
   connection: local
   gather_facts: false
 
-  collections:
-    - infoblox.nios_modules
-
   tasks:
 
-    - name: Setting up provider values
-      set_fact:
-       provider:
-        host: 10.255.197.92
-        validate_certs: "False"
+    - name: Adding incident management error handling
+      block:
 
-    - name: configure an A record
-      infoblox.nios_modules.nios_a_record:
-        name: con57-17.wwtatc.local
-        ipv4: 10.255.197.85
-        comment: this is an optional test comment
-        state: present
-        provider: "{{ provider }}"
-      connection: local
+        - name: Setting up provider values
+          ansible.builtin.set_fact:
+            provider:
+            host: 10.255.197.92
+            validate_certs: "False"
+
+        - name: Configure an A record
+          connection: local
+          infoblox.nios_modules.nios_a_record:
+            name: con57-17.wwtatc.local
+            ipv4: 10.255.197.85
+            comment: this is an optional test comment
+            state: present
+            provider: "{{ provider }}"
+
+
+      rescue:
+
+        - name: Capture the error message
+          register: my_error
+          ansible.builtin.set_stats:
+            data:
+              my_error: "{{ ansible_failed_result.msg }}"
+
+        - name: Capture the Job ID
+          register: my_job_id
+          ansible.builtin.set_stats:
+            data:
+              my_job_id: "{{ tower_job_id }}"
+
+        - name: Capture the Job Template name
+          register: my_job_template_name
+          ansible.builtin.set_stats:
+            data:
+              my_job_template_name: "{{ tower_job_template_name }}"
+
+        - name: Fail the job even though the rescue worked
+          ansible.builtin.fail:
+            msg: failing so we create the incident ticket
 ...
