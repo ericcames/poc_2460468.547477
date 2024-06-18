@@ -80,8 +80,7 @@
         host: "{{ inventory_hostname }}"
         port: 22
         delay: 90
-      delegate_to: ansible-1
-     #tag: wait_for
+      delegate_to: localhost
 
 ## Check current image
 
