@@ -7,7 +7,7 @@
   tasks:
     - name: Create
       cisco.ise.tacacs_profile:
-        state: present
+        state: present # absent (to remove )
         description: string
         name: string
         sessionAttributes:

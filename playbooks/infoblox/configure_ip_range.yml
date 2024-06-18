@@ -14,4 +14,15 @@
        provider:
         host: 10.255.197.92
         validate_certs: "False"
+
+    - name: Configure a ipv4 reserved range
+      infoblox.nios_modules.nios_range:
+        network: 10.255.197.0/24
+        start: 10.255.197.10
+        end: 10.255.197.20
+        name: Test Range 1
+        comment: this is a test comment
+        state: present
+        provider: "{{ provider }}"
+      connection: local
 ...

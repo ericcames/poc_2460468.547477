@@ -5,7 +5,7 @@
   hosts: cisco
 
   vars:
-    upgrade_ios_version: 12.2(55)SE12
+    upgrade_ios_version: 17.06.05
 
   tasks:
     # fail with good error for Automation controller user
@@ -30,8 +30,8 @@
 
     - debug:
         msg:
-        - "Current version is {{ ansible_net_version }}"
-        - "Upgrade image is {{ upgrade_ios_version }}"    #12.2.55-SE12
+        - "Current version is {{ ansible_net_version }}"  #17.03.04
+        - "Upgrade image is {{ upgrade_ios_version }}"    #17.06.05
 
     - debug:
         msg:
@@ -39,15 +39,21 @@
 
       when: ansible_net_version != upgrade_ios_version
 
+    - debug:
+        msg:
+        - "Device is already at desired firmware version!"
+
+      when: ansible_net_version = upgrade_ios_version
+
 ## Copy software to target device
 
-    - name: Copy Image // This could take up to 4 minutes
-      ansible.netcommon.net_put:
-        src: scp://cisco_software.bin
-        protocol: scp
-        dest : flash3:/cisco_software.bin
-      vars:
-        ansible_command_timeout: 600
+    # - name: Copy Image // This could take up to 4 minutes
+    #   ansible.netcommon.net_put:
+    #     src: scp://cisco_software.bin
+    #     protocol: scp
+    #     dest : flash3:/cisco_software.bin
+    #   vars:
+    #     ansible_command_timeout: 600
 
 ## Change the Boot Variable to the new image
 
@@ -89,7 +95,7 @@
     - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
       vars:
-        upgrade_ios_version: 12.2(55)SE12
+        upgrade_ios_version: 17.06.05
 
       assert:
         that:
