@@ -1,0 +1,16 @@
+---
+- name: Configure DNS view on Infoblox
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  collections:
+    - infoblox.nios_modules
+
+  tasks:
+
+    - name: Setting up provider values
+      set_fact:
+       provider:
+        host: 10.255.197.92
+        validate_certs: "False"

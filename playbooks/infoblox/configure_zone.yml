@@ -1,0 +1,29 @@
+---
+- name: Configure zone on Infoblox
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  collections:
+    - infoblox.nios_modules
+
+  tasks:
+
+    - name: Setting up provider values
+      set_fact:
+       provider:
+        host: 10.255.197.92
+        validate_certs: "False"
+
+    - name: Configure a zone on the system using a name server group
+      infoblox.nios_modules.nios_zone:
+        name: ansible.com
+        ns_group: examplensg
+        restart_if_needed: true
+        state: present
+        provider:
+          host: "{{ inventory_hostname_short }}"
+          username: admin
+          password: admin
+      connection: local
+...
