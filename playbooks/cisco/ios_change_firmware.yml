@@ -22,7 +22,7 @@
       ansible.builtin.debug:
         msg:
           - "{{ lookup('env', 'CONTROLLER_USERNAME') }}"
-          - "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
+          #- "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
           - "{{ lookup('env', 'CONTROLLER_HOST') }}"
 
     - name: CHECK CURRENT VERSION
@@ -38,12 +38,6 @@
         - "Image is not compliant and will be upgraded"
 
       when: ansible_net_version != upgrade_ios_version
-
-    - debug:
-        msg:
-        - "Device is already at desired firmware version!"
-
-      when: ansible_net_version = upgrade_ios_version
 
 ## Copy software to target device
 
