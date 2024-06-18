@@ -21,9 +21,6 @@
         ns_group: examplensg
         restart_if_needed: true
         state: present
-        provider:
-          host: "{{ inventory_hostname_short }}"
-          username: admin
-          password: admin
+        provider: "{{ provider }}"
       connection: local
 ...

@@ -17,8 +17,8 @@
 
     - name: configure an A record
       infoblox.nios_modules.nios_a_record:
-        name: aap.wwt.com
-        ipv4: 10.255.197.89
+        name: con57-17.wwtatc.local
+        ipv4: 10.255.197.85
         comment: this is an optional test comment
         state: present
         provider: "{{ provider }}"
