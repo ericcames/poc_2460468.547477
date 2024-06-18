@@ -8,7 +8,7 @@
     serial_number: "{{ my_instance_id }}"
     asset_tag: "{{ my_ami_id }}"
     sys_class_name: "{{ ci_sys_class_name }}"
-    # assigned_to: "{{ ci_assigned_to }}"
+    assigned_to: "{{ ci_assigned_to }}"
     environment: "{{ ci_environment }}"
     install_status: "{{ ci_install_status }}"
     category: "{{ ci_category }}"
