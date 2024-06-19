@@ -98,11 +98,11 @@
         that:
           - upgrade_ios_version == ansible_net_version
 
-    - name: Software Upgrade has been completed
+    #- name: Software Upgrade has been completed
       #register: complete
       debug:
-      msg:
-      - "Software Upgrade has been completed"
+        msg:
+        - "Software Upgrade has been completed"
 
 ...
 # cat9k_iosxe.17.06.05.SPA.bin
