@@ -17,13 +17,13 @@
 
         - name: Configure an A record
           connection: local
-          infoblox.nios_modules.nios_a_record:
+          infoblox.nios_modules.nios_host_record:
             name: 89599-CAT3850
-            ipv4: 10.255.197.86
-            comment: this is an optional test comment
+            ipv4:
+              - address: 10.255.197.85
             state: present
+            comment: this is an optional test comment
             provider: "{{ provider }}"
-
 
       rescue:
 
