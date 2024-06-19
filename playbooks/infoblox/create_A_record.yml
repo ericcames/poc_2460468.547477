@@ -18,7 +18,7 @@
         - name: Configure an A record
           connection: local
           infoblox.nios_modules.nios_host_record:
-            name: 89599-CAT3850
+            name: con57-17.wwtatc.local
             ipv4:
               - address: 10.255.197.85
             state: present
