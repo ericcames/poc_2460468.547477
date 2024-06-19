@@ -25,7 +25,7 @@
             comment: this is an optional test comment
             provider:
               host: 10.255.197.92
-              validate_certs: False
+              validate_certs: false
 
       rescue:
 
