@@ -2,12 +2,12 @@
 # Ansible Playbook to upgrade Cisco IOS
 
 - name: Upgrade CISCO IOS
-  hosts: all #"{{ device_name }}"
-
+  hosts: "{{ device_name }}"
   vars:
-    upgrade_ios_version: 17.06.05
+    upgrade_ios_version: 17.03.04
 
   tasks:
+
     # fail with good error for Automation controller user
     - name: Determine that both AAP and Machine credentials are set
       ansible.builtin.assert:
@@ -22,22 +22,23 @@
       ansible.builtin.debug:
         msg:
           - "{{ lookup('env', 'CONTROLLER_USERNAME') }}"
-          #- "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
+          # - "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
           - "{{ lookup('env', 'CONTROLLER_HOST') }}"
 
     - name: CHECK CURRENT VERSION
       cisco.ios.ios_facts:
 
-    - debug:
+    - name: Print comparison of versions
+      ansible.builtin.debug:
         msg:
-        - "Current version is {{ ansible_net_version }}"  #17.03.04
-        - "Upgrade image is {{ upgrade_ios_version }}"    #17.06.05
+          - "Current version is {{ ansible_net_version }}"  # 17.03.04
+          - "Upgrade image is {{ upgrade_ios_version }}"    # 17.06.05
 
-    - debug:
+    - name: Checking that we are compliant
+      when: ansible_net_version != upgrade_ios_version
+      ansible.builtin.debug:
         msg:
         - "Image is not compliant and will be upgraded"
-
-      when: ansible_net_version != upgrade_ios_version
 
 ## Copy software to target device
 
@@ -73,32 +74,34 @@
 ## Wait for Reachability to the device
 
     - name: Wait for device to come back online
-      ansible.builtin.wait_for:
-        #host: "{{ inventory_hostname }}"
-        #port: 22
-        #delay: 90
-        timeout: 300
       delegate_to: localhost
+      ansible.builtin.wait_for:
+        host: "{{ inventory_hostname }}"
+        port: 22
+        delay: 90
+        timeout: 300
 
 ## Check current image
 
     - name: Check Image Version
       cisco.ios.ios_facts:
 
-    - debug:
+    - name: Checking IOS version
+      ansible.builtin.debug:
         msg:
         - "Current version is {{ ansible_net_version }}"
 
     - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
       vars:
-        upgrade_ios_version: 17.06.05
+        upgrade_ios_version: 17.03.04
 
-      assert:
+      ansible.builtin.assert:
         that:
           - upgrade_ios_version == ansible_net_version
 
-    - debug:
+    - name: Print job completion
+      ansible.builtin.debug:
         msg:
         - "Software Upgrade has been completed"
 
