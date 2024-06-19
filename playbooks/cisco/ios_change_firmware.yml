@@ -106,6 +106,3 @@
 ...
 # cat9k_iosxe.17.06.05.SPA.bin
 # cat9k_iosxe.17.03.04.SPA.bin
-
-no boot system switch all flash:cat9k_iosxe.17.06.05.SPA.bin
-boot system switch all flash:cat9k_iosxe.17.03.04.SPA.bin
