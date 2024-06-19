@@ -21,8 +21,6 @@
             name: wwtatc.local
             provider: "{{ provider }}"
 
-
-
         - name: Configure an A record
           connection: local
           infoblox.nios_modules.nios_host_record:
