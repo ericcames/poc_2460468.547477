@@ -54,9 +54,10 @@
     - name: Change Boot Variable to new image
       cisco.ios.ios_command:
         commands:
-          - configure terminal
-          - boot system switch all flash:cat9k_iosxe.17.06.05.SPA.bin
-          - exit
+          - conf t
+          - "no boot system switch all flash:{{ ansible_net_version }}"
+          - "boot system switch all flash:{{ upgrade_ios_version }}"
+          - do wr mem
 
 ## Reload the device
 
@@ -64,9 +65,10 @@
       ansible.netcommon.cli_command:
         command: reload
         prompt:
-          - confirm
+          - Confirm
         answer:
-          - 'y'
+        newline: true
+
 
 ## Wait for Reachability to the device
 
@@ -95,9 +97,13 @@
       assert:
         that:
           - upgrade_ios_version == ansible_net_version
-    - debug:
-        msg:
-        - "Software Upgrade has been completed"
+
+    - name: Software Upgrade has been completed
+      register: complete
+      debug:
+      msg:
+      - "Software Upgrade has been completed"
+
 ...
 # cat9k_iosxe.17.06.05.SPA.bin
 # cat9k_iosxe.17.03.04.SPA.bin
