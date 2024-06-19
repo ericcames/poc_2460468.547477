@@ -2,6 +2,7 @@ plugin: servicenow.itsm.now
 table: cmdb_ci_netgear
 columns:
   - name
+  - ip_address
 # keyed_groups:
 #   - key: sn_sys_class_name | lower
 #     prefix: ''
