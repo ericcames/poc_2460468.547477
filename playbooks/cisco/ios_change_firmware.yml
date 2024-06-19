@@ -56,6 +56,16 @@
         commands: boot system switch all flash:cat9k_iosxe.17.06.05.SPA.bin
         save_when: always
 
+## Wait for Reachability to the device
+
+    - name: Boot to new image
+      ansible.builtin.wait_for:
+        #host: "{{ inventory_hostname }}"
+        #port: 22
+        #delay: 90
+        timeout: 30
+      delegate_to: localhost
+
 ## Reload the device
 
     - name: Reload the Device
@@ -70,10 +80,10 @@
 
     - name: Wait for device to come back online
       ansible.builtin.wait_for:
-        host: "{{ inventory_hostname }}"
-        port: 22
-        delay: 90
-        timeout: 600
+        #host: "{{ inventory_hostname }}"
+        #port: 22
+        #delay: 90
+        timeout: 300
       delegate_to: localhost
 
 ## Check current image
