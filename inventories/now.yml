@@ -3,6 +3,10 @@ table: cmdb_ci_netgear
 columns:
   - name
   - ip_address
+  - asset_tag
+  - sys_class_name
+  - model_number
+  - environment
 # keyed_groups:
 #   - key: sn_sys_class_name | lower
 #     prefix: ''
