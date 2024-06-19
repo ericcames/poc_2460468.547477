@@ -12,14 +12,15 @@
         - name: Setting up provider values
           ansible.builtin.set_fact:
             provider:
-            host: 10.255.197.92
-            validate_certs: "False"
+              host: 10.255.197.92
+              validate_certs: "False"
 
         - name: Ensure our zone is in place
           connection: local
           infoblox.nios_modules.nios_zone:
             name: wwtatc.local
             provider: "{{ provider }}"
+
 
 
         - name: Configure an A record
