@@ -2,7 +2,7 @@
 # Ansible Playbook to upgrade Cisco IOS
 
 - name: Upgrade CISCO IOS
-  hosts: "{{ device_name }}"
+  hosts: all #"{{ device_name }}"
 
   vars:
     upgrade_ios_version: 17.06.05
@@ -65,10 +65,9 @@
     - name: Reload the Device
       ansible.netcommon.cli_command:
         command: reload
-        prompt:
-          - confirm
-        answer:
-         -'y'
+        prompt: confirm
+        answer: y
+        newline: false
 
 
 ## Wait for Reachability to the device
