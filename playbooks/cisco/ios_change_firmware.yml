@@ -99,7 +99,7 @@
           - upgrade_ios_version == ansible_net_version
 
     - name: Software Upgrade has been completed
-      register: complete
+      #register: complete
       debug:
       msg:
       - "Software Upgrade has been completed"
