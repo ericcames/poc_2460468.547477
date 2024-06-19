@@ -68,7 +68,7 @@
         prompt:
           - Confirm
         answer:
-        newline: true
+         -'y'
 
 
 ## Wait for Reachability to the device
