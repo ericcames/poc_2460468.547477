@@ -55,8 +55,8 @@
       cisco.ios.ios_command:
         commands:
           - conf t
-          - "no boot system switch all flash:{{ ansible_net_version }}"
-          - "boot system switch all flash:{{ upgrade_ios_version }}"
+          - "no boot system switch all flash:cat9k_iosxe.{{ ansible_net_version }}.SPA.bin"
+          - "boot system switch all flash:cat9k_iosxe.{{ upgrade_ios_version }}.SPA.bin"
           - do wr mem
 
 ## Reload the device
