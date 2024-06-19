@@ -9,11 +9,17 @@
     - name: Adding incident management error handling
       block:
 
-        # - name: Setting up provider values
-        #   ansible.builtin.set_fact:
-        #     provider:
-        #     host: 10.255.197.92
-        #     validate_certs: "False"
+        - name: Setting up provider values
+          ansible.builtin.set_fact:
+            provider:
+            host: 10.255.197.92
+            validate_certs: "False"
+
+        - name: Ensure our zone is in place
+          connection: local
+          infoblox.nios_modules.nios_zone:
+            name: wwtatc.local
+
 
         - name: Configure an A record
           connection: local
@@ -23,9 +29,7 @@
               - address: 10.255.197.85
             state: present
             comment: this is an optional test comment
-            provider:
-              host: 10.255.197.92
-              validate_certs: false
+            provider: "{{ provider }}"
 
       rescue:
 
