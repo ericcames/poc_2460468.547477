@@ -53,7 +53,9 @@
 
     - name: Change Boot Variable to new image
       cisco.ios.ios_config:
-        commands: boot system switch all flash:cat9k_iosxe.17.06.05.SPA.bin
+        commands:
+          - configure terminal
+          - boot system switch all flash:cat9k_iosxe.17.06.05.SPA.bin
         save_when: always
 
 ## Wait for Reachability to the device
