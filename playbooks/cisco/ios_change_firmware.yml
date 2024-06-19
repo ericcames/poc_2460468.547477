@@ -2,7 +2,7 @@
 # Ansible Playbook to upgrade Cisco IOS
 
 - name: Upgrade CISCO IOS
-  hosts: all
+  hosts: "{{ device_name }}"
 
   vars:
     upgrade_ios_version: 17.06.05
