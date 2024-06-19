@@ -56,6 +56,7 @@
         commands:
           - configure terminal
           - boot system switch all flash:cat9k_iosxe.17.06.05.SPA.bin
+          - exit
 
 ## Reload the device
 
