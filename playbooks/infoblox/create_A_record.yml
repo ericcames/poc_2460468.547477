@@ -18,8 +18,8 @@
         - name: Configure an A record
           connection: local
           infoblox.nios_modules.nios_a_record:
-            name: con57-17.wwtatc.local
-            ipv4: 10.255.197.85
+            name: 89599-CAT3850
+            ipv4: 10.255.197.86
             comment: this is an optional test comment
             state: present
             provider: "{{ provider }}"
