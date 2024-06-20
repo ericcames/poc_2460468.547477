@@ -1,0 +1,6 @@
+- name: Update incident ticket in servicenow
+  hosts: localhost
+
+  roles:
+
+    - role: resolve_incident
