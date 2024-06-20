@@ -40,7 +40,7 @@
         name: update_incident
       vars:
           ticket_number: "{{ ticket_number }}"
-          incident_work_notes: "Current version is {{ ansible_net_version }}
+          incident_work_notes: "Current version is {{ ansible_net_version }}\n
                                 Upgrade image is {{ upgrade_ios_version }}"
 
     - name: Checking that we are compliant
