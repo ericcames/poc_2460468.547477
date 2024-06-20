@@ -115,7 +115,8 @@
         name: update_incident
       vars:
           ticket_number: "{{ ticket_number }}"
-          incident_work_notes: "Current version is {{ ansible_net_version }}"
+          incident_work_notes: "Current version is {{ ansible_net_version }}\n
+                                Software Upgrade has been completed"
 
     - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
