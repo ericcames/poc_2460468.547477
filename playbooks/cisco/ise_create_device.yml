@@ -9,6 +9,7 @@
        register: result
        cisco.ise.network_device:
          name: con57-17.wwtatc.local
+         state: absent
          modelName: CAT3850
          NetworkDeviceIPList:
            - ipaddress: 10.255.197.86
