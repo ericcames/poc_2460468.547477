@@ -109,6 +109,14 @@
         msg:
         - "Current version is {{ ansible_net_version }}"
 
+    - name: Update ticket with ansible version comparison
+      delegate_to: localhost
+      ansible.builtin.import_role:
+        name: update_incident
+      vars:
+          ticket_number: "{{ ticket_number }}"
+          incident_work_notes: "Current version is {{ ansible_net_version }}"
+
     - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
       vars:
