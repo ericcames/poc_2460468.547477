@@ -15,7 +15,7 @@
         # dnac_port: "{{dnac_port}}" Optional, tcp 443 by default
         # dnac_version: "{{dnac_version}}" Optional, not needed
         # dnac_debug: "{{dnac_debug}}" Used if you want to turn on debug
-        headers: "{{my_headers | from_json}}"
+        # headers: "{{ my_headers | from_json }}"
 
     - name: Print output
       ansible.builtin.debug:
