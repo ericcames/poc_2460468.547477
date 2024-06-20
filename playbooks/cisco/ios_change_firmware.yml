@@ -104,8 +104,8 @@
       ansible.builtin.wait_for:
         host: "{{ inventory_hostname }}"
         port: 22
-        delay: 30
-        timeout: 300
+        delay: 90
+        timeout: 900
 
 ## Check current image
 
