@@ -4,14 +4,12 @@
   servicenow.itsm.incident_info:
     number: "{{ ticket_number }}"
 
-- name: Print the result
-  ansible.builtin.debug:
-    var: result
-
-- name: Update the incident work notes in ServiceNow
+- name: Resolve the incident
   servicenow.itsm.api:
     action: patch
     resource: incident
     sys_id: "{{ result.records[0].sys_id }}"
     data:
-      work_notes: "{{ incident_work_notes }}"
+      state: "{{ incident_state }}"
+      close_code: "{{ incident_close_code }}"
+      close_notes: "{{ incident_close_notes }}"
