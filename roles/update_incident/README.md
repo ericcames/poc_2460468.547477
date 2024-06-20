@@ -10,7 +10,6 @@ Role Variables
 --------------
 ```
 incident_work_notes: This came from AAP!! Hoo-yah!
-incident_state: 2
 ```
 Dependencies
 ------------

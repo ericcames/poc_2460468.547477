@@ -15,4 +15,3 @@
     sys_id: "{{ result.records[0].sys_id }}"
     data:
       work_notes: "{{ incident_work_notes }}"
-      state: "{{ incident_state }}"
