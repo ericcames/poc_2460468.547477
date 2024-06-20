@@ -120,6 +120,16 @@
           incident_work_notes: "Current version is {{ ansible_net_version }}\n
                                 Software Upgrade has been completed"
 
+    - name: Update ticket with ansible version comparison
+      when: ansible_net_version == upgrade_ios_version
+      delegate_to: localhost
+      ansible.builtin.import_role:
+        name: update_incident
+      vars:
+          ticket_number: "{{ ticket_number }}"
+          incident_work_notes: "Current version is {{ ansible_net_version }}\n
+                                No software upgrade required"
+
     - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
       vars:
