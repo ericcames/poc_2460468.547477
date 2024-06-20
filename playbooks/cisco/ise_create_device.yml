@@ -11,8 +11,8 @@
          name: con57-17.wwtatc.local
          modelName: CAT3850
          NetworkDeviceIPList:
-          ipaddress: 10.255.197.86
-          mask: 32
+           - ipaddress: 10.255.197.86
+             mask: 32
         # ise_hostname: "{{ise_hostname}}" PROVIDED BY CUSTOM CREDENTIAL
         # ise_username: "{{ise_username}}" PROVIDED BY CUSTOM CREDENTIAL
         # ise_password: "{{ise_password}}" PROVIDED BY CUSTOM CREDENTIAL
