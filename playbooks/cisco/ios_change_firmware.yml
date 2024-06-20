@@ -152,6 +152,16 @@
         msg:
         - "Software Upgrade has been completed"
 
+    - name: Resolve ticket
+      delegate_to: localhost
+      ansible.builtin.import_role:
+        name: resolve_incident
+      vars:
+          ticket_number: "{{ ticket_number }}"
+          incident_state: 6
+          incident_close_code: Solution provided
+          incident_close_notes: IOS upgrade process executed
+
 ...
 # cat9k_iosxe.17.06.05.SPA.bin
 # cat9k_iosxe.17.03.04.SPA.bin
