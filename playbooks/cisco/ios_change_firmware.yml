@@ -4,7 +4,7 @@
 - name: Upgrade CISCO IOS
   hosts: "{{ device_name }}"
   vars:
-    upgrade_ios_version: 17.05.06
+    upgrade_ios_version: 17.06.05
 
   tasks:
 
