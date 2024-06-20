@@ -9,6 +9,7 @@
     - name: Get Stuff
       register: my_details
       cisco.dnac.device_details_info:
+        identifier: 017163-CAT9500.labs.wwtatc.local
 
     - name: Print stuff out
       ansible.builtin.debug:
