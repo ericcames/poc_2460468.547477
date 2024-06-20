@@ -10,8 +10,7 @@
        cisco.ise.network_device:
          name: con57-17.wwtatc.local
          modelName: CAT3850
-        NetworkDeviceIPList:
-          #getIpaddressExclude: none
+         NetworkDeviceIPList:
           ipaddress: 10.255.197.86
           mask: 32
         # ise_hostname: "{{ise_hostname}}" PROVIDED BY CUSTOM CREDENTIAL
