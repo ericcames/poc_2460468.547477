@@ -5,7 +5,7 @@
 
     - name: Retrieve requested item ticket sysid
       register: result
-      servicenow..incident_info:
+      servicenow.itsm.incident_info:
         number: "{{ ticket_number }}"
 
     - name: Print the result
