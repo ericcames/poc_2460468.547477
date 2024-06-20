@@ -35,6 +35,7 @@
           - "Upgrade image is {{ upgrade_ios_version }}"    # 17.06.05
 
     - name: Update ticket with ansible version comparison
+      delegate_to: localhost
       ansible.builtin.include_role:
         name: update_incident
       vars:
