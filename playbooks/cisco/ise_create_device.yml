@@ -13,7 +13,7 @@
         # ise_hostname: "{{ise_hostname}}" PROVIDED BY CUSTOM CREDENTIAL
         # ise_username: "{{ise_username}}" PROVIDED BY CUSTOM CREDENTIAL
         # ise_password: "{{ise_password}}" PROVIDED BY CUSTOM CREDENTIAL
-        # ise_verify: "{{ise_verify}}" PROVIDED BY CUSTOM CREDENTIAL ( True by default, setting to false for POC )
+         ise_verify: false #PROVIDED BY CUSTOM CREDENTIAL ( True by default, setting to false for POC )
      - name: Print out result
        ansible.builtin.debug:
          var: result
