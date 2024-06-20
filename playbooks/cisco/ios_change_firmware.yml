@@ -25,6 +25,14 @@
           # - "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
           - "{{ lookup('env', 'CONTROLLER_HOST') }}"
 
+    - name: Update ticket and let them know we are starting
+      delegate_to: localhost
+      ansible.builtin.import_role:
+        name: update_incident
+      vars:
+          ticket_number: "{{ ticket_number }}"
+          incident_work_notes: "IOS firmware upgrade is begining"
+
     - name: CHECK CURRENT VERSION
       cisco.ios.ios_facts:
 
