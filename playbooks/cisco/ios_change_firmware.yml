@@ -34,6 +34,14 @@
           - "Current version is {{ ansible_net_version }}"  # 17.03.04
           - "Upgrade image is {{ upgrade_ios_version }}"    # 17.06.05
 
+    - name: Update ticket with ansible version comparison
+      ansible.builtin.include_role:
+        name: update_incident
+      vars:
+          ticket_number: "{{ ticket_number }}"
+          incident_work_notes: "Current version is {{ ansible_net_version }}
+                                Upgrade image is {{ upgrade_ios_version }}"
+
     - name: Checking that we are compliant
       when: ansible_net_version != upgrade_ios_version
       ansible.builtin.debug:
