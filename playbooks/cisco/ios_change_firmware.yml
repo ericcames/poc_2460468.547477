@@ -4,26 +4,26 @@
 - name: Upgrade CISCO IOS
   hosts: "{{ device_name }}"
   vars:
-    upgrade_ios_version: 17.06.05
+    upgrade_ios_version: 17.03.04
 
   tasks:
 
-    # fail with good error for Automation controller user
-    - name: Determine that both AAP and Machine credentials are set
-      ansible.builtin.assert:
-        that:
-          - "lookup('env', 'CONTROLLER_USERNAME') !=''"
-        fail_msg:
-          - "This Job requires two credentials"
-          - "Red Hat Ansible Automation Platform credential is not set"
-          - "Please assign correct credentials to the Job Template"
+    # # fail with good error for Automation controller user
+    # - name: Determine that both AAP and Machine credentials are set
+    #   ansible.builtin.assert:
+    #     that:
+    #       - "lookup('env', 'CONTROLLER_USERNAME') !=''"
+    #     fail_msg:
+    #       - "This Job requires two credentials"
+    #       - "Red Hat Ansible Automation Platform credential is not set"
+    #       - "Please assign correct credentials to the Job Template"
 
-    - name: Determine that both AAP and Machine credentials are set
-      ansible.builtin.debug:
-        msg:
-          - "{{ lookup('env', 'CONTROLLER_USERNAME') }}"
-          # - "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
-          - "{{ lookup('env', 'CONTROLLER_HOST') }}"
+    # - name: Determine that both AAP and Machine credentials are set
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ lookup('env', 'CONTROLLER_USERNAME') }}"
+    #       # - "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
+    #       - "{{ lookup('env', 'CONTROLLER_HOST') }}"
 
     - name: Update ticket and let them know we are starting
       delegate_to: localhost
@@ -156,8 +156,8 @@
 
     - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
-      vars:
-        upgrade_ios_version: 17.06.05
+      #vars:
+        #upgrade_ios_version: 17.03.04
 
       ansible.builtin.assert:
         that:
