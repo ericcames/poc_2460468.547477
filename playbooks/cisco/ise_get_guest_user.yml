@@ -5,31 +5,16 @@
   gather_facts: false
 
   tasks:
-    - name: Get all Guest User
-      cisco.ise.guest_user_info:
+     - name: Create a device in ISE
+       register: result
+       cisco.ise.network_device:
+         name: con57-17.wwtatc.local
+         modelName: CAT3850
         # ise_hostname: "{{ise_hostname}}" PROVIDED BY CUSTOM CREDENTIAL
         # ise_username: "{{ise_username}}" PROVIDED BY CUSTOM CREDENTIAL
         # ise_password: "{{ise_password}}" PROVIDED BY CUSTOM CREDENTIAL
         # ise_verify: "{{ise_verify}}" PROVIDED BY CUSTOM CREDENTIAL ( True by default, setting to false for POC )
-        page: 1
-        size: 20
-        sortasc: string
-        sortdsc: string
-        filter: []
-        filterType: AND
-      register: result
-
-    # - name: Get Guest User by id
-    #   cisco.ise.guest_user_info:
-    #     id: string
-    #   register: result
-
-    # - name: Get Guest User by name
-    #   cisco.ise.guest_user_info:
-    #     name: string
-    #   register: result
-
-    - name: Print out result
-      ansible.builtin.debug:
-        var: result
+     - name: Print out result
+       ansible.builtin.debug:
+         var: result
 ...
