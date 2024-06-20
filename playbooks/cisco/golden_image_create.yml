@@ -1,0 +1,13 @@
+---
+- name: Information module for Device Interface By Ip
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+
+    - name: Create
+      cisco.dnac.golden_image_create:
+        deviceRole: DISTIBUTION
+        imageId: cat9k_iosxe.17.03.04.SPA.bin
+        siteId: -1
