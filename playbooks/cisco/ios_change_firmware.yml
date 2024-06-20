@@ -4,7 +4,7 @@
 - name: Upgrade CISCO IOS
   hosts: "{{ device_name }}"
   vars:
-    upgrade_ios_version: 17.03.04
+    upgrade_ios_version: 17.06.05
 
   tasks:
 
@@ -141,7 +141,7 @@
     - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
       vars:
-        upgrade_ios_version: 17.03.04
+        upgrade_ios_version: 17.06.05
 
       ansible.builtin.assert:
         that:
