@@ -1,0 +1,21 @@
+---
+- name: Gold and load
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Tag the given image as golden and load it on device
+      register: gold_output
+      cisco.dnac.swim_workflow_manager:
+        config:
+          - tagging_details:
+              image_name: cat9k_iosxe.17.06.05.SPA.bin
+              device_role: DISTRIBUTION
+              device_image_family_name: Cisco Catalyst 9500 Switch
+              site_name: Global/USA/San Francisco/BGL_18
+            tagging: True
+
+    - name: print gold_output
+      ansible.builtin.debug:
+        var: gold_output
