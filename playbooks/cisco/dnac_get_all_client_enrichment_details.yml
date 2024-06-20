@@ -5,9 +5,9 @@
   gather_facts: false
 
   tasks:
-    - name: Get Device Interface By Ip by id
+    - name: Get all Client Enrichment Details
       register: result
-      cisco.dnac.device_interface_by_ip_info:
+      cisco.dnac.client_enrichment_details_info:
         # dnac_host: "{{dnac_host}}"  PROVIDED BY CUSTOM CRED
         # dnac_username: "{{dnac_username}}" PROVIDED BY CUSTOM CRED
         # dnac_password: "{{dnac_password}}" PROVIDED BY CUSTOM CRED
@@ -16,7 +16,6 @@
         # dnac_version: "{{dnac_version}}" Optional, not needed
         # dnac_debug: "{{dnac_debug}}" Used if you want to turn on debug
         headers: "{{my_headers | from_json}}"
-        ipAddress: string
 
     - name: Print output
       ansible.builtin.debug:
