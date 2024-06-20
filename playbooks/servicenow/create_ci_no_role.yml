@@ -2,6 +2,9 @@
 - name: creating a cmdb record
   hosts: localhost
   gather_facts: no
+  vars:
+    my_server: ''
+    my_instance_id: ''
 
   tasks:
 
