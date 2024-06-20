@@ -6,4 +6,3 @@ collections:
   - name: servicenow.itsm
   - name: servicenow.servicenow
   - name: cisco.dnac
-    version: 6.12.0
