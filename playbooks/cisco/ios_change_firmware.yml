@@ -105,7 +105,7 @@
         host: "{{ inventory_hostname }}"
         port: 22
         delay: 90
-        timeout: 400
+        timeout: 300
 
 ## Check current image
 
