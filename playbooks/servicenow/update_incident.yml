@@ -12,12 +12,11 @@
       ansible.builtin.debug:
         var: result
 
-    # - name: Update the requested item work notes and state in ServiceNow
-    #   servicenow.itsm.api:
-    #     action: patch
-    #     resource: sc_req_item
-    #     sys_id: "{{ result.record[0].sys_id }}"
-    #     data:
-    #       request_state: "{{ request_state | default(omit) }}"
-    #       comments: "{{ requested_item_comments }}"
-    #       state: "{{ requested_item_state }}"
+    - name: Update the incident work notes and state in ServiceNow
+      servicenow.itsm.api:
+        action: patch
+        resource: incident
+        sys_id: "{{ result.record[0].sys_id }}"
+        data:
+          work_notes: "{{ incident_work_notes }}"
+          state: "{{ incident_state }}"
