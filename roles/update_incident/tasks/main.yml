@@ -1,0 +1,18 @@
+---
+- name: Retrieve requested item ticket sysid
+  register: result
+  servicenow.itsm.incident_info:
+    number: "{{ ticket_number }}"
+
+- name: Print the result
+  ansible.builtin.debug:
+    var: result
+
+- name: Update the incident work notes and state in ServiceNow
+  servicenow.itsm.api:
+    action: patch
+    resource: incident
+    sys_id: "{{ result.records[0].sys_id }}"
+    data:
+      work_notes: "{{ incident_work_notes }}"
+      state: "{{ incident_state }}"
