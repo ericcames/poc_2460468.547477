@@ -49,6 +49,15 @@
         msg:
         - "Image is not compliant and will be upgraded"
 
+    - name: Update ticket with ansible version comparison
+      when: ansible_net_version != upgrade_ios_version
+      delegate_to: localhost
+      ansible.builtin.import_role:
+        name: update_incident
+      vars:
+          ticket_number: "{{ ticket_number }}"
+          incident_work_notes: "Image is not compliant and will be upgraded"
+
 ## Copy software to target device
 
     # - name: Copy Image // This could take up to 4 minutes
