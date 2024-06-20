@@ -36,7 +36,7 @@
 
     - name: Update ticket with ansible version comparison
       delegate_to: localhost
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: update_incident
       vars:
           ticket_number: "{{ ticket_number }}"
