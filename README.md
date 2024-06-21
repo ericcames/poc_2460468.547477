@@ -22,6 +22,7 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/DeviceUpgradeFlow1.png "")
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/DeviceUpgradeFlow2.png "")
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/DeviceUpgradeFlow3.png "")
 
 
 
