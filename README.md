@@ -41,7 +41,13 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/crqaapjob2.png "")
 
 
-# Device Migration
+# Configuration Management Database (CMDB) updates
+
+**The cmdb records**
+
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/CMDBRecords.png "")
+
+
 
 # Environment Setup
 
