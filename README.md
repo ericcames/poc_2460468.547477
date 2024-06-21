@@ -21,8 +21,7 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 **Device upgrade workflow in ServiceNOW**
 
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/DeviceUpgradeTemplateFlow1.png "")
-![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/DeviceUpgradeTemplateFlow2.png "")
-![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/DeviceUpgradeTemplateFlow3.png "")
+
 
 
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
