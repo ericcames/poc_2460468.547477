@@ -118,6 +118,39 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 **Custom Execution Environment**
 
+```
+---
+version: 3
+images:
+  base_image:
+    name: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest
+dependencies:
+  galaxy:
+    collections:
+      - community.network
+      - cisco.dnac
+      - cisco.ios
+      - cisco.ise
+      - infoblox.nios_modules
+  system:
+    - pkgconf-pkg-config [platform:rpm]
+    - systemd-devel [platform:rpm]
+    - gcc [platform:rpm]
+    - python39-devel [platform:rpm]
+  python:
+    - packaging
+    - requests[security]
+    - xmltodict
+    - msgraph-sdk==1.0.0
+    - psycopg2-binary
+    - infoblox-client
+    - ciscoisesdk
+    - dnacentersdk
+    - urllib3==1.26.15
+options:
+  package_manager_path: /usr/bin/microdnf
+```
+
 - [Custom Exeuction Environment](https://quay.io/locust61/cisco-infoblox-ee "Custom Exeuction Environment")
 - [locust61 quay repo](https://quay.io/locust61 "locust61 quay repo")
 
