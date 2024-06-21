@@ -35,7 +35,15 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/crq1.png "")
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/crq2.png "")
 
+**Change Ticket fires off an Ansible worflow template**
+
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/crqaapjob1.png "")
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/crqaapjob2.png "")
+
+
 # Device Migration
+
+# Environment Setup
 
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
 
