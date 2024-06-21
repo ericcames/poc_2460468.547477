@@ -53,6 +53,8 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 # Automated incident management example
 
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/automatedinc.png "")
+
 [Example Error Handling in support of incident enrichment](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/infoblox/create_host_record.yml "Example Error Handling") <br>
 
 ```
