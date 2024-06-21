@@ -205,7 +205,7 @@ OAuth Redirect URL: https://ven05433.service-now.com/api/sn_ansible_spoke/ansibl
 ```
 - Automated incident management example
 
-[Example Error Handling in support of incident enrichment](https://github.com/ericcames/aap.dailydemo.linux/blob/main/roles/instance_create_aws/tasks/main.yml "Example Error Handling") <br>
+[Example Error Handling in support of incident enrichment](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/infoblox/create_host_record.yml "Example Error Handling") <br>
 
 ```
 - name: Adding incident management error handling
