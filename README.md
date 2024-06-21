@@ -94,6 +94,9 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/InfoBlox1.png "")
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/infoblox2.png "")
 
+**Cisco ISE**
+
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/ise1.png "")
 
 
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
