@@ -151,7 +151,7 @@ options:
   package_manager_path: /usr/bin/microdnf
 ```
 
-- [Custom Exeuction Environment](https://quay.io/locust61/cisco-infoblox-ee "Custom Exeuction Environment")
+- [quay.io/locust61/cisco-infoblox-ee](https://quay.io/locust61/cisco-infoblox-ee "Custom Exeuction Environment")
 - [locust61 quay repo](https://quay.io/locust61 "locust61 quay repo")
 
 # Ansible Custom Credentials
