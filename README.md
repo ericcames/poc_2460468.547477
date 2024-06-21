@@ -1,3 +1,5 @@
+- [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
+
 - [Custom Exeuction Environment](https://quay.io/locust61/cisco-infoblox-ee "Custom Exeuction Environment")
 - [locust61 quay repo](https://quay.io/locust61 "locust61 quay repo")
 
