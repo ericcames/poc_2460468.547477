@@ -47,7 +47,9 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/CMDBRecords.png "")
 
+**The Playbook that does the work**
 
+[CMDB Updates](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/servicenow/create_ci.yml "CMDB Updates") <br>
 
 # Environment Setup
 
