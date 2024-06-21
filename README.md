@@ -105,6 +105,8 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 **Ansible Service Account in SNOW**
 
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/AnsibleSVC.png "")
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/AnsibleSVCroles.png "")
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/AnsibleSVCgroups.png "")
 
 
 **Open issue**
