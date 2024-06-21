@@ -24,6 +24,7 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/DeviceUpgradeTemplateFlow2.png "")
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/DeviceUpgradeTemplateFlow3.png "")
 
+
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
 
 - [Custom Exeuction Environment](https://quay.io/locust61/cisco-infoblox-ee "Custom Exeuction Environment")
