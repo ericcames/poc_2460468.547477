@@ -28,6 +28,14 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 [IOS Change Firmware](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/cisco/ios_change_firmware.yml "IOS Change Firmware") <br>
 
+# Network Health Test Automation
+
+**Change Ticket created from a template**
+
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/crq1.png "")
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/crq2.png "")
+
+# Device Migration
 
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
 
