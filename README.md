@@ -89,6 +89,13 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 # Environment
 
+**Infoblox**
+
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/infoblox1.png "")
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/infoblox2.png "")
+
+
+
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
 
 - [Custom Exeuction Environment](https://quay.io/locust61/cisco-infoblox-ee "Custom Exeuction Environment")
