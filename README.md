@@ -91,7 +91,6 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 **Infoblox**
 
-![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/infoblox1.png "")
 ![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/infoblox2.png "")
 
 
