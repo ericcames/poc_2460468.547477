@@ -26,7 +26,7 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 **The Playbook that does the work**
 
-[IOS Change Firmware](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/ios_change_firmware.yml "IOS Change Firmware") <br>
+[IOS Change Firmware](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/cisco/ios_change_firmware.yml "IOS Change Firmware") <br>
 
 
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
