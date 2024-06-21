@@ -1,3 +1,14 @@
+The proof of concept
+=========
+Managing network device upgrades using ansible automation platform and a IT Service managmenet (ITSM) system.  Managing network health test automation in the same fashion as the first use case.  In the first use case we arbitrarily opted to use the Incident Managment process and on the second use case we opted to used the Standard Change process.  The third use case was replacing an existing piece of network gear.  The systems we were working with were Infoblox, Cisco DNA Center, Cisco Identity Service Engine, TACACS, ServiceNOW and of course the Ansible Automation Platform.
+
+# Device Upgrades
+
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/inc1.png "")
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/inc2.png "")
+![alt text](https://github.com/ericcames/poc_2460468.547477/blob/main/images/inc3.png "")
+
+
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
 
 - [Custom Exeuction Environment](https://quay.io/locust61/cisco-infoblox-ee "Custom Exeuction Environment")
