@@ -1,3 +1,96 @@
+- Cisco Identity Services Engine (ISE) credential
+```
+Input configuration
+
+fields:
+  - id: ISE_HOSTNAME
+    type: string
+    label: Hostname
+  - id: ISE_USERNAME
+    type: string
+    label: Username
+  - id: ISE_PASSWORD
+    type: string
+    label: Password
+    secret: true
+  - id: ISE_VERIFY
+    type: string
+    label: SSL Verify
+required:
+  - Hostname
+  - Username
+  - Password
+  - SSL Verify
+```
+```
+Injector configuration
+
+env:
+  ISE_HOSTNAME: '{{ ISE_HOSTNAME }}'
+  ISE_PASSWORD: '{{ ISE_PASSWORD }}'
+  ISE_USERNAME: '{{ ISE_USERNAME }}'
+  ISE_VERIFY: '{{ ISE_VERIFY }}'
+```
+
+- Cisco DNA Center (DNAC) credential
+```
+Input configuration
+
+fields:
+  - id: DNAC_HOST
+    type: string
+    label: Hostname
+  - id: DNAC_USERNAME
+    type: string
+    label: Username
+  - id: DNAC_PASSWORD
+    type: string
+    label: Password
+    secret: true
+  - id: DNAC_VERIFY
+    type: string
+    label: SSL VERIFY
+
+```
+```
+Injector configuration
+
+env:
+  DNAC_HOST: '{{ DNAC_HOST }}'
+  DNAC_VERIFY: '{{ DNAC_VERIFY }}'
+  DNAC_PASSWORD: '{{ DNAC_PASSWORD }}'
+  DNAC_USERNAME: '{{ DNAC_USERNAME }}'
+```
+
+- Infoblox credential
+```
+Input configuration
+
+fields:
+  - id: INFOBLOX_HOST
+    type: string
+    label: Hostname
+  - id: INFOBLOX_USERNAME
+    type: string
+    label: Username
+  - id: INFOBLOX_PASSWORD
+    type: string
+    label: Password
+    secret: true
+required:
+  - Username
+  - Password
+  - Hostname
+```
+```
+Injector configuration
+
+env:
+  INFOBLOX_HOST: '{{ INFOBLOX_HOST }}'
+  INFOBLOX_PASSWORD: '{{ INFOBLOX_PASSWORD }}'
+  INFOBLOX_USERNAME: '{{ INFOBLOX_USERNAME }}'
+```
+
 - ServiceNow credential
 ```
 Input configuration
