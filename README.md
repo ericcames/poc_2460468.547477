@@ -1,7 +1,4 @@
-- Custom Exeuction Environment
-```
-quay.io/locust61/cisco-infoblox-ee
-```
+- [Custom Exeuction Environment](https://quay.io/locust61/cisco-infoblox-ee "Custom Exeuction Environment")
 
 - Cisco Identity Services Engine (ISE) credential
 ```
