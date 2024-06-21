@@ -51,6 +51,42 @@ Managing network device upgrades using ansible automation platform and a IT Serv
 
 [CMDB Updates](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/servicenow/create_ci.yml "CMDB Updates") <br>
 
+# Automated incident management example
+
+[Example Error Handling in support of incident enrichment](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/infoblox/create_host_record.yml "Example Error Handling") <br>
+
+```
+- name: Adding incident management error handling
+  block:
+
+    PUT YOUR TASKS HERE
+
+  rescue:
+
+    - name: Capture the error message
+      register: my_error
+      ansible.builtin.set_stats:
+        data:
+          my_error: "{{ ansible_failed_result.msg }}"
+
+    - name: Capture the Job ID
+      register: my_job_id
+      ansible.builtin.set_stats:
+        data:
+          my_job_id: "{{ tower_job_id }}"
+
+    - name: Capture the Job Template name
+      register: my_job_template_name
+      ansible.builtin.set_stats:
+        data:
+          my_job_template_name: "{{ tower_job_template_name }}"
+
+    - name: Fail the job even though the rescue worked
+      ansible.builtin.fail:
+        msg: failing so we create the incident ticket
+```
+
+
 # Environment
 
 - [Open Issue - swim_workflow_manager ansible module](https://github.com/cisco-en-programmability/dnacenter-ansible/issues/174 "Open Issue - swim_workflow_manager ansible module")
@@ -202,38 +238,4 @@ Authorization URL: https://ericames.ddns.net/api/o/authorize/
 Token URL: https://ericames.ddns.net/api/o/token/
 OAuth Redirect URL: https://ven05433.service-now.com/api/sn_ansible_spoke/ansible_oauth_redirect
 
-```
-- Automated incident management example
-
-[Example Error Handling in support of incident enrichment](https://github.com/ericcames/poc_2460468.547477/blob/main/playbooks/infoblox/create_host_record.yml "Example Error Handling") <br>
-
-```
-- name: Adding incident management error handling
-  block:
-
-    PUT YOUR TASKS HERE
-
-  rescue:
-
-    - name: Capture the error message
-      register: my_error
-      ansible.builtin.set_stats:
-        data:
-          my_error: "{{ ansible_failed_result.msg }}"
-
-    - name: Capture the Job ID
-      register: my_job_id
-      ansible.builtin.set_stats:
-        data:
-          my_job_id: "{{ tower_job_id }}"
-
-    - name: Capture the Job Template name
-      register: my_job_template_name
-      ansible.builtin.set_stats:
-        data:
-          my_job_template_name: "{{ tower_job_template_name }}"
-
-    - name: Fail the job even though the rescue worked
-      ansible.builtin.fail:
-        msg: failing so we create the incident ticket
 ```
