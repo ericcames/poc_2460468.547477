@@ -1,0 +1,5 @@
+collections:
+- community.network
+- cisco.ios
+- cisco.ise
+- infoblox.nios_modules
