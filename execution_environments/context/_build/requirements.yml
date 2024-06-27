@@ -1,6 +1,0 @@
-collections:
-- community.network
-- cisco.dnac
-- cisco.ios
-- cisco.ise
-- infoblox.nios_modules
