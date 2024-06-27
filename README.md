@@ -1,4 +1,4 @@
-The proof of concept
+The Proof of Concept
 =========
 Managing network device upgrades using ansible automation platform and a IT Service managmenet (ITSM) system.  Managing network health test automation in the same fashion as the first use case.  In the first use case we arbitrarily opted to use the Incident Managment process and on the second use case we opted to used the Standard Change process.  The third use case was replacing an existing piece of network gear.  The systems we were working with were Infoblox, Cisco DNA Center, Cisco Identity Service Engine, TACACS, ServiceNOW and of course the Ansible Automation Platform.
 
