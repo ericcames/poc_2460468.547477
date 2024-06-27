@@ -1,9 +1,0 @@
-packaging
-requests[security]
-xmltodict
-msgraph-sdk==1.0.0
-psycopg2-binary
-infoblox-client
-ciscoisesdk
-dnacentersdk
-urllib3

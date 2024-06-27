@@ -8,6 +8,7 @@ dependencies:
     collections:
       - community.network
       - cisco.dnac
+        version: 6.12.0
       - cisco.ios
       - cisco.ise
       - infoblox.nios_modules
