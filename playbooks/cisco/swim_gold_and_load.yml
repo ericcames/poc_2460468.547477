@@ -5,9 +5,10 @@
   gather_facts: false
 
   tasks:
+
     - name: Tag the given image as golden and load it on device
       register: gold_output
-      cisco.dnac.swim_workflow_manager:
+      cisco.dnac.swim_intent:
         dnac_host: 10.10.100.20
         config:
           - tagging_details:
