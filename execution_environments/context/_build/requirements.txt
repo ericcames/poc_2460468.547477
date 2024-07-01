@@ -5,5 +5,5 @@ msgraph-sdk==1.0.0
 psycopg2-binary
 infoblox-client
 ciscoisesdk
-dnacentersdk
+dnacentersdk==2.5.5
 urllib3

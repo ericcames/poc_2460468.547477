@@ -24,7 +24,7 @@ dependencies:
     - psycopg2-binary
     - infoblox-client
     - ciscoisesdk
-    - dnacentersdk
+    - dnacentersdk==2.5.5
     - urllib3
 options:
   package_manager_path: /usr/bin/microdnf
